@@ -1,6 +1,10 @@
+//tr
 //oyunda sayý tahmin ediyoruz ama bu diðerlerinden biraz farklý. Ýlk sayýyý tahmin etmeye çalýþtýðýnýzda 5 sayý arasýndan bilmeye çalýþýyorsunuz. Fakat sayýyý her bilemediðinizde
 //bu sayi 0-5 arasi degil 0-6 gibi artarak devam ediyor ve sayý tahmini zorlaþýyor. eðer 5 kez bilemezseniz oyun biter 3 kez bilirseniz oyunu kazanirsiniz. Her bildiginizde artan aralik azalir
 
+//en
+//We guess numbers in the game but this one is a little different from the others. When you try to guess the first number, you are trying to know from 5 numbers. However, every time you do not know the number
+//this number continues to increase like 0-6, not between 0-5, and the number estimation becomes difficult. If you do not know 5 times, the game is over. If you know 3 times, you win the game. Every time you know, this range decreases.
 #include <iostream>
 #include <stdlib.h>
 #include <time.h>
@@ -28,14 +32,15 @@ int main()
 
     if (sayilar[sayigir] == 1)
     { 
-	cout << "kazandin" << endl;
-	bildin+=1;
+	cout << "kazandin sayi" <<ras<<"'de sakliydi" << endl;
+	bildin+=1; 
+	if(bildin==3)
+        goto bitis;
 	bilemedin-=1;
 	goto basadon;
-	if(bildin==3)
-        	goto bitis;
+
 	 cout << "sayi : " << ras << "'de sakliydi" << endl;
-        goto bitis;
+	 
 }
     else
     {
@@ -55,14 +60,16 @@ int main()
     {
         if (sayilar[sayigir] == sayilar[i])
         {
-        	cout << "kazandin" << endl;
+        	cout << "kazandin sayi " <<ras<<"'de sakliydi" << endl;
         	bildin+=1;
+        	if(bildin==3)
+        goto bitis;
         	bilemedin-=1;
         	goto basadon;
-        	if(bildin==3)
-        	goto bitis;
+        	
         	 cout << "sayi : " << ras << "'de sakliydi" << endl;
-            goto bitis;
+        
+        	goto bitis;
 		}
             
         else
